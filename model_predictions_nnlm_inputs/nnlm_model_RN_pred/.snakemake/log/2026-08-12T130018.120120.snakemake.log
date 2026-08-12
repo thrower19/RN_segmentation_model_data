@@ -1,0 +1,216 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: UWO-CBS-Heavy10
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+nnlm_to_fcsv       20
+run_nnlm           18
+stereotaxy         26
+total              65
+
+Select jobs to execute...
+Execute 3 jobs...
+[Wed Aug 12 13:00:20 2026]
+localrule run_nnlm:
+    input: work/sub-P292/ses-preop/resample/sub-P292_ses-preop_acq-ax_run-01_res-100_desc-zscore_T1w.nii.gz, /localscratch/.cache/autoafids/models/nnlm
+    output: work/sub-P292/ses-preop/afids-nnlm/sub-P292_ses-preop_acq-ax_run-01_dseg.nii.gz, work/sub-P292/ses-preop/afids-nnlm/sub-P292_ses-preop_acq-ax_run-01_coords.json
+    log: logs/sub-P292/ses-preop/sub-P292_ses-preop_acq-ax_run-01_nnlm.log
+    jobid: 73
+    reason: Missing output files: work/sub-P292/ses-preop/afids-nnlm/sub-P292_ses-preop_acq-ax_run-01_coords.json
+    wildcards: subject=P292, session=preop, acq=ax, run=01
+    threads: 4
+    resources: tmpdir=/localscratch/tmp, gpus=0, mem_mb=16000, mem_mib=15259
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/6ee0e8c060cc6e84267c0f99faf11702_
+[Wed Aug 12 13:00:20 2026]
+localrule run_nnlm:
+    input: work/sub-P277/ses-preop/resample/sub-P277_ses-preop_acq-ax_run-01_res-100_desc-zscore_T1w.nii.gz, /localscratch/.cache/autoafids/models/nnlm
+    output: work/sub-P277/ses-preop/afids-nnlm/sub-P277_ses-preop_acq-ax_run-01_dseg.nii.gz, work/sub-P277/ses-preop/afids-nnlm/sub-P277_ses-preop_acq-ax_run-01_coords.json
+    log: logs/sub-P277/ses-preop/sub-P277_ses-preop_acq-ax_run-01_nnlm.log
+    jobid: 58
+    reason: Missing output files: work/sub-P277/ses-preop/afids-nnlm/sub-P277_ses-preop_acq-ax_run-01_coords.json
+    wildcards: subject=P277, session=preop, acq=ax, run=01
+    threads: 4
+    resources: tmpdir=/localscratch/tmp, gpus=0, mem_mb=16000, mem_mib=15259
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/6ee0e8c060cc6e84267c0f99faf11702_
+[Wed Aug 12 13:00:20 2026]
+localrule run_nnlm:
+    input: work/sub-P328/ses-preop/resample/sub-P328_ses-preop_acq-ax_run-01_res-100_desc-zscore_T1w.nii.gz, /localscratch/.cache/autoafids/models/nnlm
+    output: work/sub-P328/ses-preop/afids-nnlm/sub-P328_ses-preop_acq-ax_run-01_dseg.nii.gz, work/sub-P328/ses-preop/afids-nnlm/sub-P328_ses-preop_acq-ax_run-01_coords.json
+    log: logs/sub-P328/ses-preop/sub-P328_ses-preop_acq-ax_run-01_nnlm.log
+    jobid: 88
+    reason: Missing output files: work/sub-P328/ses-preop/afids-nnlm/sub-P328_ses-preop_acq-ax_run-01_coords.json
+    wildcards: subject=P328, session=preop, acq=ax, run=01
+    threads: 4
+    resources: tmpdir=/localscratch/tmp, gpus=0, mem_mb=16000, mem_mib=15259
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/6ee0e8c060cc6e84267c0f99faf11702_
+Select jobs to execute...
+[Wed Aug 12 13:07:01 2026]
+Finished jobid: 58 (Rule: run_nnlm)
+1 of 65 steps (2%) done
+Execute 4 jobs...
+[Wed Aug 12 13:07:02 2026]
+localrule stereotaxy:
+    input: sub-P167/ses-preop/afids-cnn/sub-P167_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P167/ses-preop/stereotaxy/sub-P167_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P167/ses-preop/stereotaxy/sub-P167_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P167/ses-preop/ACPCtransforms/sub-P167_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    jobid: 133
+    reason: Missing output files: sub-P167/ses-preop/stereotaxy/sub-P167_ses-preop_acq-ax_run-01_desc-fct_native.fcsv
+    wildcards: subject=P167, session=preop, acq=ax, run=01
+    resources: tmpdir=/localscratch/tmp
+[Wed Aug 12 13:07:02 2026]
+localrule nnlm_to_fcsv:
+    input: work/sub-P277/ses-preop/afids-nnlm/sub-P277_ses-preop_acq-ax_run-01_coords.json, work/sub-P277/ses-preop/resample/sub-P277_ses-preop_acq-ax_run-01_res-100_desc-zscore_T1w.nii.gz
+    output: sub-P277/ses-preop/afids-cnn/sub-P277_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    jobid: 57
+    reason: Missing output files: sub-P277/ses-preop/afids-cnn/sub-P277_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv; Input files updated by another job: work/sub-P277/ses-preop/afids-nnlm/sub-P277_ses-preop_acq-ax_run-01_coords.json
+    wildcards: subject=P277, session=preop, acq=ax, run=01
+    resources: tmpdir=/localscratch/tmp
+[Wed Aug 12 13:07:02 2026]
+localrule stereotaxy:
+    input: sub-P350/ses-preop/afids-cnn/sub-P350_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P350/ses-preop/stereotaxy/sub-P350_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P350/ses-preop/stereotaxy/sub-P350_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P350/ses-preop/ACPCtransforms/sub-P350_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    jobid: 150
+    reason: Missing output files: sub-P350/ses-preop/stereotaxy/sub-P350_ses-preop_acq-ax_run-01_desc-fct_native.fcsv
+    wildcards: subject=P350, session=preop, acq=ax, run=01
+    resources: tmpdir=/localscratch/tmp
+[Wed Aug 12 13:07:02 2026]
+localrule stereotaxy:
+    input: sub-P193/ses-preop/afids-cnn/sub-P193_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P193/ses-preop/stereotaxy/sub-P193_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P193/ses-preop/stereotaxy/sub-P193_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P193/ses-preop/ACPCtransforms/sub-P193_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    jobid: 136
+    reason: Missing output files: sub-P193/ses-preop/stereotaxy/sub-P193_ses-preop_acq-ax_run-01_desc-fct_native.fcsv
+    wildcards: subject=P193, session=preop, acq=ax, run=01
+    resources: tmpdir=/localscratch/tmp
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/9b0ebefefdaf8f4c3064162c9af16ee6_
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/9b0ebefefdaf8f4c3064162c9af16ee6_
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Select jobs to execute...
+[Wed Aug 12 13:07:03 2026]
+Finished jobid: 57 (Rule: nnlm_to_fcsv)
+2 of 65 steps (3%) done
+Execute 1 jobs...
+[Wed Aug 12 13:07:03 2026]
+localrule stereotaxy:
+    input: sub-P289/ses-preop/afids-cnn/sub-P289_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P289/ses-preop/stereotaxy/sub-P289_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P289/ses-preop/stereotaxy/sub-P289_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P289/ses-preop/ACPCtransforms/sub-P289_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    jobid: 145
+    reason: Missing output files: sub-P289/ses-preop/stereotaxy/sub-P289_ses-preop_acq-ax_run-01_desc-fct_native.fcsv
+    wildcards: subject=P289, session=preop, acq=ax, run=01
+    resources: tmpdir=/localscratch/tmp
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+[Wed Aug 12 13:07:03 2026]
+Finished jobid: 88 (Rule: run_nnlm)
+3 of 65 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Aug 12 13:07:03 2026]
+localrule run_nnlm:
+    input: work/sub-P202/ses-preop/resample/sub-P202_ses-preop_acq-ax_run-01_res-100_desc-zscore_T1w.nii.gz, /localscratch/.cache/autoafids/models/nnlm
+    output: work/sub-P202/ses-preop/afids-nnlm/sub-P202_ses-preop_acq-ax_run-01_dseg.nii.gz, work/sub-P202/ses-preop/afids-nnlm/sub-P202_ses-preop_acq-ax_run-01_coords.json
+    log: logs/sub-P202/ses-preop/sub-P202_ses-preop_acq-ax_run-01_nnlm.log
+    jobid: 28
+    reason: Missing output files: work/sub-P202/ses-preop/afids-nnlm/sub-P202_ses-preop_acq-ax_run-01_coords.json
+    wildcards: subject=P202, session=preop, acq=ax, run=01
+    threads: 4
+    resources: tmpdir=/localscratch/tmp, gpus=0, mem_mb=16000, mem_mib=15259
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/6ee0e8c060cc6e84267c0f99faf11702_
+Select jobs to execute...
+Activating conda environment: ../../../../localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+RuleException:
+CalledProcessError in file "/local/scratch/autoafids/autoafids/workflow/rules/stereotaxy.smk", line 62:
+Command 'source /local/scratch/autoafids/.pixi/envs/default/bin/activate '/localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_'; set -euo pipefail;  python /local/scratch/autoafids/nnlm_model_fct_pred/.snakemake/scripts/tmp3pr8j5yc.stereotaxy.py' returned non-zero exit status 1.
+[Wed Aug 12 13:07:04 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 150
+    input: sub-P350/ses-preop/afids-cnn/sub-P350_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P350/ses-preop/stereotaxy/sub-P350_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P350/ses-preop/stereotaxy/sub-P350_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P350/ses-preop/ACPCtransforms/sub-P350_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Removing output files of failed job stereotaxy since they might be corrupted:
+work/sub-P350/ses-preop/ACPCtransforms/sub-P350_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+RuleException:
+CalledProcessError in file "/local/scratch/autoafids/autoafids/workflow/rules/stereotaxy.smk", line 62:
+Command 'source /local/scratch/autoafids/.pixi/envs/default/bin/activate '/localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_'; set -euo pipefail;  python /local/scratch/autoafids/nnlm_model_fct_pred/.snakemake/scripts/tmp5qdshu6m.stereotaxy.py' returned non-zero exit status 1.
+[Wed Aug 12 13:07:04 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 133
+    input: sub-P167/ses-preop/afids-cnn/sub-P167_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P167/ses-preop/stereotaxy/sub-P167_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P167/ses-preop/stereotaxy/sub-P167_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P167/ses-preop/ACPCtransforms/sub-P167_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+RuleException:
+CalledProcessError in file "/local/scratch/autoafids/autoafids/workflow/rules/stereotaxy.smk", line 62:
+Command 'source /local/scratch/autoafids/.pixi/envs/default/bin/activate '/localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_'; set -euo pipefail;  python /local/scratch/autoafids/nnlm_model_fct_pred/.snakemake/scripts/tmpuvw9b63b.stereotaxy.py' returned non-zero exit status 1.
+[Wed Aug 12 13:07:04 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 136
+    input: sub-P193/ses-preop/afids-cnn/sub-P193_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P193/ses-preop/stereotaxy/sub-P193_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P193/ses-preop/stereotaxy/sub-P193_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P193/ses-preop/ACPCtransforms/sub-P193_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Removing output files of failed job stereotaxy since they might be corrupted:
+work/sub-P167/ses-preop/ACPCtransforms/sub-P167_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+Removing output files of failed job stereotaxy since they might be corrupted:
+work/sub-P193/ses-preop/ACPCtransforms/sub-P193_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+RuleException:
+CalledProcessError in file "/local/scratch/autoafids/autoafids/workflow/rules/stereotaxy.smk", line 62:
+Command 'source /local/scratch/autoafids/.pixi/envs/default/bin/activate '/localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_'; set -euo pipefail;  python /local/scratch/autoafids/nnlm_model_fct_pred/.snakemake/scripts/tmpw3x51rjj.stereotaxy.py' returned non-zero exit status 1.
+[Wed Aug 12 13:07:05 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 145
+    input: sub-P289/ses-preop/afids-cnn/sub-P289_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P289/ses-preop/stereotaxy/sub-P289_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P289/ses-preop/stereotaxy/sub-P289_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P289/ses-preop/ACPCtransforms/sub-P289_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Removing output files of failed job stereotaxy since they might be corrupted:
+work/sub-P289/ses-preop/ACPCtransforms/sub-P289_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+[Wed Aug 12 13:07:08 2026]
+Finished jobid: 73 (Rule: run_nnlm)
+4 of 65 steps (6%) done
+[Wed Aug 12 13:11:07 2026]
+Finished jobid: 28 (Rule: run_nnlm)
+5 of 65 steps (8%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Wed Aug 12 13:11:07 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 133
+    input: sub-P167/ses-preop/afids-cnn/sub-P167_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P167/ses-preop/stereotaxy/sub-P167_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P167/ses-preop/stereotaxy/sub-P167_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P167/ses-preop/ACPCtransforms/sub-P167_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+[Wed Aug 12 13:11:07 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 150
+    input: sub-P350/ses-preop/afids-cnn/sub-P350_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P350/ses-preop/stereotaxy/sub-P350_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P350/ses-preop/stereotaxy/sub-P350_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P350/ses-preop/ACPCtransforms/sub-P350_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+[Wed Aug 12 13:11:07 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 145
+    input: sub-P289/ses-preop/afids-cnn/sub-P289_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P289/ses-preop/stereotaxy/sub-P289_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P289/ses-preop/stereotaxy/sub-P289_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P289/ses-preop/ACPCtransforms/sub-P289_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+[Wed Aug 12 13:11:07 2026]
+Error in rule stereotaxy:
+    message: None
+    jobid: 136
+    input: sub-P193/ses-preop/afids-cnn/sub-P193_ses-preop_acq-ax_run-01_desc-afidscnn-nnlm_afids.fcsv
+    output: sub-P193/ses-preop/stereotaxy/sub-P193_ses-preop_acq-ax_run-01_desc-fct_native.fcsv, sub-P193/ses-preop/stereotaxy/sub-P193_ses-preop_acq-ax_run-01_desc-fct_mcp.fcsv, work/sub-P193/ses-preop/ACPCtransforms/sub-P193_ses-preop_acq-ax_run-01_desc-transform_ACPC.txt
+    conda-env: /localscratch/.cache/autoafids/conda/7e9941e9acc1503fed10fd844ea3118b_
+Complete log(s): /local/scratch/autoafids/nnlm_model_fct_pred/.snakemake/log/2026-08-12T130018.120120.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
